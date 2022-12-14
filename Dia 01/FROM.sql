@@ -41,3 +41,7 @@ FROM silver_olist.pedido
 
 Limit 200
 
+
+-- COMMAND ----------
+
+
