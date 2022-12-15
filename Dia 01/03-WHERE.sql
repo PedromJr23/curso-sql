@@ -87,3 +87,20 @@ Where descSituacao in ('shipped','canceled')
   
   
   --leia-se: selecione todas as colunas da tabela silver, filtrando pedidos (enviados  ou cancelados de 2018)
+
+-- COMMAND ----------
+
+SELECT *,
+       datediff(dtEstimativaEntrega,dtAprovado)
+
+
+FROM silver_olist.pedido
+
+Where descSituacao in ('shipped','canceled')
+  
+  And year (dtPedido) = '2018'
+  AND datediff (dtEstimativaEntrega, dtAprovado) > 30
+  
+  
+  
+  --leia-se: selecione todas as colunas da tabela silver, filtrando pedidos (enviados  ou cancelados de 2018)
