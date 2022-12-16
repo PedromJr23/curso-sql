@@ -31,14 +31,13 @@ and vlPagamento /nrPacelas < 20
 --para frete > 50% 
 
 SELECT *, 
-
 vlPreco + vlFrete AS vlTotal, 
 vlFrete / (vlPreco + vlFrete) AS pctFrete,
 
 CASE
 WHEN vlFrete / (vlPreco + vlFrete) <= 0.1 THEN '10%'
 WHEN vlFrete / (vlPreco + vlFrete) <= 0.25 then '10%' A '25%'
-WHEN  vlFrete / (vlPreco + vlFrete) <= 0.5 then '25%' A '50%%'
+WHEN vlFrete / (vlPreco + vlFrete) <= 0.5 then '25%' A '50%%'
 ELSE '+50%'
 END AS descFretePCT
 
